@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target)
+    {
+        vector<pair<int,int>>t;
+        for(int i=0;i<nums.size();i++)
+        {
+            t.push_back(make_pair(nums[i],i));
+        }
+        int n=nums.size();
+        sort(t.begin(),t.end());
+        vector<int>ans;
+        int i,j;
+        i=0;
+        j=n-1;
+        while(i<j)
+        {
+            int ps=t[i].first+t[j].first;
+            if(ps>target)
+            {
+                j--;
+            }
+            else if(ps<target)
+            {
+                i++;
+            }
+            else
+            {
+                ans.push_back(t[i].second);
+                ans.push_back(t[j].second);
+                return ans;
+            }
+        }
+        return ans;
+
+    }
+};
