@@ -1,0 +1,20 @@
+import java.util.StringTokenizer;
+class Solution {
+    public String reverseWords(String s) 
+    {
+        StringTokenizer st = new StringTokenizer(s);
+        int c=st.countTokens();
+        String a[]=new String[c];
+        for(int i=0;i<c;i++)
+        {
+           a[i]=st.nextToken();
+        }
+        String x="";
+        for(int i = c - 1; i >= 0; i--)
+        {
+            x+=a[i]+" ";
+        }
+        return x.trim();
+        
+    }
+}
