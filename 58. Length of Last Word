@@ -9,5 +9,5 @@ class Solution {
            a=st.nextToken();
         }
         return a.length();
-    }
+    } 
 }
